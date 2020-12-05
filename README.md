@@ -1,2 +1,0 @@
-CLARUSWAY 
-nodejs postgres project
