@@ -43,7 +43,7 @@ bgc2,
 .custab {
 	border: 1px solid #ccc;
 	padding: 5px;
-	margin: 5% 0;
+	margin: 0 0;
 	box-shadow: 3px 3px 2px #ccc;
 	transition: 0.5s;
 }
@@ -51,7 +51,16 @@ bgc2,
 	box-shadow: 3px 3px 0px transparent;
 	transition: 0.5s;
 }
-.table :first-child{
-  margin: auto;
+.col-md-6{
+	display: flex;
+    flex-direction: row-reverse;
 }
 
+@media (min-width: 768px){
+.col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 100%;
+
+}
+}
