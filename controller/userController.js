@@ -39,3 +39,23 @@ exports.delete_user = async (req, res) => {
 		res.redirect('/users');
 	} catch (error) {}
 };
+
+exports.show_update_user_form = (req, res) => {
+	const id = req.params.id;
+	const firstName = req.params.firstName;
+	const lastName = req.params.lastName;
+	// res.send('update user form')
+	res.render('updateUser', { id, firstName, lastName });
+};
+
+exports.update_user = async (req, res) => {
+	const id = req.params.id;
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+	try {
+    await UserModal.update({firstName,lastName},{where: {id: id}});
+    res.redirect('/users')
+	} catch (error) {
+		console.log('updateError', error);
+	}
+};

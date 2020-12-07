@@ -59,20 +59,22 @@
                     </thead>
                     <tbody>
                         <% userList.map((user)=>{ %>
-                    <tr>
-                        <td><%= user.id %> </td>
-                        <td><%= user.firstName %> </td>
-                        <td><%= user.lastName %></td>
-                        <td><%= user.createdAt %></td>
-                        <td><%= user.updatedAt %></td>
-                        <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span
-                                    class="glyphicon glyphicon-edit"></span> Edit</a> <a href="/users/<%= user.id %>/delete "
-                                class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
-                        </td>
-                    </tr>
-                    <%}) %> 
-                </tbody>
-                    
+                        <tr>
+                            <td><%= user.id %> </td>
+                            <td><%= user.firstName %> </td>
+                            <td><%= user.lastName %></td>
+                            <td><%= user.createdAt %></td>
+                            <td><%= user.updatedAt %></td>
+                            <td class="text-center">
+                                <a class='btn btn-info btn-xs' href="/users/<%= user.id %>/<%= user.firstName %>/<%= user.lastName %>/update">
+                                    <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                <a href="/users/<%= user.id %>/delete " class="btn btn-danger btn-xs">
+                                    <span class="glyphicon glyphicon-remove"></span> Del</a>
+                            </td>
+                        </tr>
+                        <%}) %>
+                    </tbody>
+
                 </table>
             </div>
         </div>
