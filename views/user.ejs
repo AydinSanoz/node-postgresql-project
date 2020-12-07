@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    
+
 
     <link rel="stylesheet" href="/stylesheets/user.css">
     <title>USER PAGE</title>
@@ -60,17 +58,19 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% userList.map((user)=>{ %>
                     <tr>
-                        <td>1</td>
-                        <td>Alex</td>
-                        <td>Carter</td>
-                        <td>27.10.2020</td>
-                        <td>12.12.2020</td>
+                        <td><%= user.id %> </td>
+                        <td><%= user.firstName %> </td>
+                        <td><%= user.lastName %></td>
+                        <td><%= user.createdAt %></td>
+                        <td><%= user.updatedAt %></td>
                         <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span
                                     class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#"
                                 class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a>
                         </td>
                     </tr>
+                    <%}) %> 
                 </tbody>
                     
                 </table>
