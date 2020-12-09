@@ -2,6 +2,7 @@ const { Connection } = require('pg');
 const { Sequelize, DataTypes } = require('sequelize');
 
 // postgresql connection check
+//TODO: check process.env connection
 
 const { DB_USERNAME, DB_PASSWORD, DB_HOSTNAME, DB_PORT, DB_NAME } = process.env;
 console.log("🚀 ~ file: UserModal.js ~ line 7 ~ DB_USERNAME", DB_USERNAME)
